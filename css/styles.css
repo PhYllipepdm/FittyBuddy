@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
+body{
     display: flex;
-    background-color: #f0f5fd;
+    height: 100vh;
+    background: #f0f5fd;
 }
 
-.secao-lateral {
+.left-section{
     background: #fff;
-    width: 200px;
+    width: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 25px 12px;
+    padding: 25px 10px;
     transition: all 0.3s ease;
 }
 
-.secao-lateral h2 {
+.left-section h2{
     color: #364670;
     margin-bottom: 15px;
     text-align: center;
 }
 
-.secao-lateral .barra-lateral {
+.left-section .menu-lateral{
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.secao-lateral .barra-lateral .item,
-.secao-lateral .sair {
+.left-section .menu-lateral .item,
+.left-section .sign-out{
     display: flex;
     align-items: center;
     gap: 6px;
@@ -47,120 +47,293 @@ body {
     transition: all 0.3s ease;
 }
 
-.secao-lateral .barra-lateral .item.active h3,
-.secao-lateral .barra-lateral .item.active i,
-.secao-lateral .barra-lateral .item:hover,
-.secao-lateral .sair:hover {
+.left-section .menu-lateral .item.active h3,
+.left-section .menu-lateral .item.active i,
+.left-section .menu-lateral .item:hover,
+.left-section .sign-out:hover{
     color: #1976d2;
-    margin: 0;
 }
 
-.secao-lateral .barra-lateral .item h3,
-.secao-lateral .sair h3 {
-    font-size: 18px;
+.left-section .menu-lateral .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
     font-weight: 500;
-    margin: 0; 
 }
 
-.secao-lateral .barra-lateral .item i,
-.secao-lateral .sair i {
+.left-section .menu-lateral .item i,
+.left-section .sign-out i{
     font-size: 22px;
-    margin-right: 6px; 
 }
 
-main{
+.main{
     flex: 6;
     padding: 25px;
 }
 
-main header{
+.main .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-main header .search{
-    background-color: #fff;
+.main .header .search{
+    background: #fff;
     display: flex;
     align-items: center;
     width: 75%;
     padding: 8px 10px;
     border-radius: 10px;
-    box-shadow: 0px 2px 6px rgba(136, 148, 171, 0.2),
-     0 24px 20px -24px rgba(71, 82, 107, 0.1);
+    box-shadow: 0 2px 6px rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
 }
 
-main header .search button{
+.main .header .search button{
     font-size: 20px;
     border: none;
-    background-color: transparent;
+    background: transparent;
 }
 
-main header .search input{
+.main .header .search input{
     padding: 4px 6px;
     font-size: 14px;
     border: none;
-    outline: none; /*Tira o efeito quando selecionado*/
+    outline: none;
     width: 100%;
 }
 
-main header .search i{
+.main .header .search i{
     cursor: pointer;
 }
 
-main header .btns-icons{
+.main .header .icon-btns{
     display: flex;
     gap: 8px;
 }
 
-main header .btns-icons i{
-    font-size: 18px;
-    background-color: #1976d2;
+.main .header .icon-btns i{
+    font-size: 20px;
+    background: #1976d2;
     padding: 8px;
     color: #fff;
-    cursor: pointer;
     border-radius: 10px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-main header .btns-icons i:hover{
-    background-color: #0d47a1;
+.main .header .icon-btns i:hover{
+    background: #0d47a1;
 }
 
-main header .btns-icons i#menu-btn{
+.main .header .icon-btns i#menu-btn{
     display: none;
 }
 
-main .separador{
-    margin: 35px 0px 20px;
+.main .separator{
+    margin: 35px 0 20px;
+    font-size: 20px;
     font-weight: 500;
     color: #364670;
     text-align: center;
-    font-size: 45px;
 }
 
-main #container1{
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
+.right-section{
+    flex: 2;
+    padding: 25px 25px 15px 10px;
 }
 
-main .bpm-colum { 
-    background-color: #fff;
-    margin-right: 10px;
-    padding: 12px;
+.right-section .profile{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 30px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
 }
 
-main .sleep-colum{
-    background-color: #fff;
-    margin-left: 10px;
-    padding: 12px;
+.right-section .profile .info{
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-.bpm-colum i{
-    color: #1976d2;
-    font-size: 30px;
+.right-section .profile .info img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
+.right-section .profile .info .account h5{
+    font-size: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.right-section .profile .info .account p{
+    font-size: 13px;
+    color: #999;
+}
+
+.right-section .profile > i{
+    font-size: 24px;
+    color: #364670;
+    cursor: pointer;
+}
+
+.right-section .widgets{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-section .widgets .disk{
+    background: #fff;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+    padding: 0 25px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
+}
+
+.right-section .widgets .disk .progress{
+    display: flex;
+    justify-content: center;
+}
+
+.right-section .widgets .disk .progress .progress-bar{
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(closest-side, #fff 79%, transparent 80% 100%), conic-gradient(#1976d2 25%, #e9e4ff 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.right-section .widgets .disk .progress .progress-bar::before{
+    content: "25%";
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.right-section .widgets .disk .info h5{
+    color: #999;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.right-section .widgets .disk h5 span{
+    color: #364670;
+}
+
+.right-section .widgets .disk .info p{
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 992px) {
+    
+    .left-section{
+        position: absolute;
+        width: 160px;
+        left: -160px;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-section .menu-lateral .item{
+        justify-content: start;
+    }
+
+    .left-section .menu-lateral .item h3,
+    .left-section .sign-out h3{
+        display: block;
+    }
+
+    .left-section .menu-lateral .item i,
+    .left-section .sign-out i{
+        font-size: 22px;
+    }
+
+    .main,
+    .right-section{
+        padding: 15px;
+    }
+
+    .main .header{
+        gap: 10px;
+    }
+
+    .main .header .icon-btns i#menu-btn{
+        display: block;
+    }
+
+    .main .quick-access .item p{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    .main{
+        padding: 26px 15px 0;
+    }
+
+    .main .header{
+        justify-content: start;
+    }
+
+    .main .header .search{
+        width: 50%;
+    }
+
+    .right-section .profile{
+        position: static;
+        top: 15px;
+        right: 15px;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 576px) and (min-width: 320px) {
+    
+    .main{
+        width: 100%; /* Define a largura como 100% */
+        padding: 30px 15px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main .header .search{
+        width: 68%;
+    }
+
+    .right-section{
+        display: none; /* Esconde a right-section */
+    }
+
+    .right-section .widgets .disk .info h5 {
+        font-size: 16px; /* Reduzir o tamanho da fonte */
+        margin-bottom: 6px; /* Reduzir a margem inferior */
+    }
+
+    .right-section .widgets .disk .info p {
+        font-size: 12px; /* Reduzir o tamanho da fonte */
+    }
+
+}
+
+
