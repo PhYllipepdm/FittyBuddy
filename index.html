@@ -11,6 +11,8 @@
 
 <body>
 
+    <!-- Menu Lateral -->
+
     <div class="left-section">
         <div class="menu-lateral">
             <h2>FittyBuddy</h2>
@@ -50,6 +52,7 @@
         </div>
     </div>
 
+    <!-- Seção Lateral -->
     <div class="main">
 
         <div class="header">
@@ -69,6 +72,7 @@
             FittyBuddy
         </h3>
 
+        <!-- Seção de Destaque -->
         <div class="destaque-seção">
          
             <div class="bpm-colum">
@@ -89,19 +93,66 @@
             Atividades
         </h3>
 
+        <!-- Container de cartões de atividades -->
         <div class="card-atividades">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagem do Card">
-                <div class="card-body">
-                    <h5 class="card-title">Título do Card</h5>
-                    <p class="card-text">Descrição do Card. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn btn-primary">Botão</a>
+            <button class="prev-btn"><i class="ri-arrow-left-line"></i></button>
+            <div class="card-container">
+                <div class="carousel">
+
+                    <div class="content">
+                        <i class="ri-run-line"></i>
+                        <h3>Caminhada</h3>
+                        <div class="line2"></div>
+                        <div class="atividade-info">
+                            <p><span class="info-label">Data:</span> 20/04/2024</p>
+                            <p><span class="info-label">Hora:</span> 08:00 - 09:00</p>
+                            <p><span class="info-label">Duração:</span> 1 hora</p>
+                            <p><span class="info-label">Distância:</span> 5 km</p>        
+                        </div>   
+                    </div>
+                    
+                    <div class="content">
+                        <i class="ri-weight-fill"></i>
+                        <h3>Academia</h3>
+                        <div class="line2"></div>
+                        <div class="atividade-info">
+                            <p><span class="info-label">Data:</span> 21/04/2024</p>
+                            <p><span class="info-label">Hora:</span> 10:00 - 11:00</p>
+                            <p><span class="info-label">Duração:</span> 1 hora</p>
+                            <p><span class="info-label">Distância:</span> N/A</p>        
+                        </div>   
+                    </div>
+                    
+                    <div class="content">
+                        <i class="ri-riding-line"></i>
+                        <h3>Bicicleta</h3>
+                        <div class="line2"></div>
+                        <div class="atividade-info">
+                            <p><span class="info-label">Data:</span> 22/04/2024</p>
+                            <p><span class="info-label">Hora:</span> 15:00 - 16:00</p>
+                            <p><span class="info-label">Duração:</span> 1 hora</p>
+                            <p><span class="info-label">Distância:</span> 10 km</p>        
+                        </div>   
+                    </div>
+                    
+                    <div class="content">
+                        <i class="ri-basketball-fill"></i>
+                        <h3>Basquete</h3>
+                        <div class="line2"></div>
+                        <div class="atividade-info">
+                            <p><span class="info-label">Data:</span> 23/04/2024</p>
+                            <p><span class="info-label">Hora:</span> 18:00 - 19:00</p>
+                            <p><span class="info-label">Duração:</span> 1 hora</p>
+                            <p><span class="info-label">Distância:</span> N/A</p>        
+                        </div>   
+                    </div>
+                    
+
                 </div>
             </div>
-            
+            <button class="next-btn"><i class="ri-arrow-right-line"></i></button>
         </div>
         
-
     </div>
 
     <div class="right-section">
@@ -135,7 +186,7 @@
         
 
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/scripts.js"></script>
 </body>
 

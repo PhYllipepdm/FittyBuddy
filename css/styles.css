@@ -187,61 +187,111 @@ body{
     color: #364670;
 }
 
-.card-atividades{
+
+.card-atividades {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha quando não couberem na largura da tela */
 }
 
-
-
-
-
-.card {
-    width: 300px; /* Largura do card */
-    border: 1px solid #ccc; /* Borda do card */
-    border-radius: 8px; /* Arredondamento das bordas */
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa os limites do card */
-    margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+.card-container {
+    height: 360px;
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 
-.card img {
-    width: 100%; /* Largura da imagem */
-    height: auto; /* Altura automática da imagem */
-    display: block; /* Garante que a imagem não tenha margem inferior */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.card-body {
-    padding: 15px; /* Espaçamento interno do corpo do card */
+.content {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px; /* Espaçamento inferior entre os cartões */
 }
 
-.card-title {
-    font-size: 18px; /* Tamanho da fonte do título */
-    margin-bottom: 10px; /* Espaçamento inferior do título */
+.content i {
+    font-size: 30px;
+    color: #364670;
 }
 
-.card-text {
-    font-size: 14px; /* Tamanho da fonte do texto */
-    color: #555; /* Cor do texto */
-    margin-bottom: 15px; /* Espaçamento inferior do texto */
+.content .line2 {
+    width: 80%;
+    border-bottom: 2px solid #1976d2;
+    margin: 8px auto;
 }
 
-.btn {
-    display: inline-block; /* Transforma o botão em bloco para aplicar margem */
-    padding: 8px 12px; /* Espaçamento interno do botão */
-    background-color: #007bff; /* Cor de fundo do botão (azul) */
-    color: #fff; /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 4px; /* Arredondamento das bordas do botão */
-    text-decoration: none; /* Remove sublinhado do link */
+.content h3 {
+    margin-bottom: 10px;
+    color: #364670;
 }
 
-.btn:hover {
-    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+.content .info-label {
+    font-weight: bold;
+    color: #0d47a1;
 }
 
+.content p {
+    color: #272727;
+}
 
+.ri-arrow-left-line {
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+}
 
+.ri-arrow-right-line {
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+}
 
+.ri-arrow-right-line:hover {
+    color: #0056b3;
+}
 
+/* Estilos para o botão de navegação do carrossel */
+.ri-arrow-left-line:hover {
+    color: #0056b3;
+}
+
+/* Estilos para os botões de navegação */
+.prev-btn,
+.next-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    color: #0056b3;
+}
+
+.prev-btn:focus,
+.next-btn:focus {
+    outline: none;
+}
+
+/* Estilos para o ícone dos botões */
+.prev-btn i,
+.next-btn i {
+    font-size: 24px;
+    margin: 50px;
+}
 
 
 
@@ -419,31 +469,96 @@ body{
 
 @media screen and (max-width: 576px) and (min-width: 320px) {
     
-    .main{
-        width: 100%; /* Define a largura como 100% */
+    .main {
+        width: 100%;
         padding: 30px 15px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .main .header .search{
+    .main .header .search {
         width: 68%;
     }
 
-    .right-section{
-        display: none; /* Esconde a right-section */
+    .main .destaque-seção .bpm-colum,
+    .main .destaque-seção .sleep-colum {
+        margin: 0 30px;
+        width: 150px;
+    }
+
+    .line {
+        margin: 20px 0;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .right-section {
+        display: none;
     }
 
     .right-section .widgets .disk .info h5 {
-        font-size: 16px; /* Reduzir o tamanho da fonte */
-        margin-bottom: 6px; /* Reduzir a margem inferior */
+        font-size: 16px;
+        margin-bottom: 6px;
     }
 
     .right-section .widgets .disk .info p {
-        font-size: 12px; /* Reduzir o tamanho da fonte */
+        font-size: 12px;
     }
 
+    .card-container,
+    .carousel {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .content {
+        width: 220px;
+    }
+
+    /* Estilos para os botões de navegação */
+    .prev-btn,
+    .next-btn {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        position: absolute; /* Posição absoluta para alinhar os botões no carrossel */
+        top: 50%; /* Alinha os botões verticalmente no centro */
+        transform: translateY(-50%); /* Ajusta a posição vertical */
+    }
+
+    .prev-btn {
+        left: 0; /* Alinha o botão anterior à esquerda */
+    }
+
+    .next-btn {
+        right: 0; /* Alinha o botão seguinte à direita */
+    }
+
+    .prev-btn i,
+    .next-btn i {
+        font-size: 24px;
+        color: #007bff;
+        cursor: pointer;
+    }
+
+    .prev-btn:hover,
+    .next-btn:hover {
+        color: #0056b3;
+    }
+
+    .prev-btn:focus,
+    .next-btn:focus {
+        outline: none;
+    }
+
+    .ri-arrow-right-line:hover {
+        color: #0056b3;
+    }
+
+    .ri-arrow-left-line:hover {
+        color: #0056b3;
+    }
 }
 
 
