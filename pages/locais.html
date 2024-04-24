@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
     <title>FittyBuddy</title>
     <link rel="shortcut icon" href="/img/FITTYBUDDY.jpg" type="image/jpg">
 </head>
@@ -81,8 +82,25 @@
 
         <div id="demo"></div><br>
         
-        
-
+        <div id="map"></div>
+        <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+        <script>
+            const map = new ol.Map({
+                layers:[
+                    new ol.layer.Tile({
+                        source: new ol.source.TileJSON({
+                            url: 'https://api.maptiler.com/maps/basic-v2/tiles.json?key=RBKrruyHQERgVYSO6nS1',
+                            tileSize: 512,
+                        })
+                    })
+                ],
+                target: 'map',
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([-43.206091, -22.920387]),
+                    zoom: 13 // Defina o nível de zoom desejado
+                })
+            });
+        </script>
 
     <!-- Footer -->
     <footer>

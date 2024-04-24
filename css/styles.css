@@ -728,4 +728,12 @@ h1 {
     color: #364670;
 }
 
+#map {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* ajuste conforme necessário */
+    height: 50%; /* ajuste conforme necessário */
+}
 
