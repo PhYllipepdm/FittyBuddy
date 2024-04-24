@@ -728,6 +728,29 @@ h1 {
     color: #364670;
 }
 
+#demo{
+    font-weight: 500;
+    margin: 5px;
+    color: #f0f5fd;
+}
+
+#btn-local{
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    background-color: #007bff;
+}
+
+.container-map{
+    width: 80%;
+    height: 480px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 #map {
     position: absolute;
     top: 65%;
@@ -735,5 +758,14 @@ h1 {
     transform: translate(-50%, -50%);
     width: 70%; /* ajuste conforme necessário */
     height: 50%; /* ajuste conforme necessário */
+    margin-top: 15px;
+    padding: 10px;
 }
 
+.separator3{
+    margin: 25px 0 35px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #364670;
+    text-align: center;
+}
