@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f0f5fd">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="manifest" href="/manifest.json">
@@ -32,7 +33,7 @@
             </div>
             <div class="item">
                 <i class="ri-user-line"></i>
-                <h3>Perfil</h3>
+                <a href="/pages/perfil.html"><h3>Perfil</h3></a>
             </div>
             <div class="item">
                 <i class="ri-treasure-map-line"></i>
@@ -195,9 +196,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/scripts.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js');
-        }
+            if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful');
+        }, function(err) {
+          // Registration failed
+          console.log('ServiceWorker registration failed: ', err);
+        });
+        });
+}
     </script>
 </body>
 

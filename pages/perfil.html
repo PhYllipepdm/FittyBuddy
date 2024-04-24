@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f0f5fd">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>FittyBuddy</title>
+    <link rel="shortcut icon" href="/img/FITTYBUDDY.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Menu Lateral -->
+
+    <div class="left-section">
+        <div class="menu-lateral">
+            <a href="/pages/login.html"><h2>FittyBuddy</h2></a>
+            <div class="item">
+                <i class="ri-apps-line"></i>
+                <a href="/index.html"><h3>Painel</h3></a>
+            </div>
+            <div class="item">
+                <i class="ri-run-line"></i>
+                <h3>Registro de Atividades</h3>
+            </div>
+            <div class="item">
+                <i class="ri-pie-chart-line"></i>
+                <h3>Plano de Treino</h3>
+            </div>
+            <div class="item">
+                <i class="ri-user-line"></i>
+                <h3>Perfil</h3>
+            </div>
+            <div class="item">
+                <i class="ri-treasure-map-line"></i>
+                <h3><a href="#">Locais de Treino</a></h3>
+            </div>
+            <div class="item">
+                <i class="ri-shake-hands-line"></i>
+                <h3>Compartilhar Progresso</h3>
+            </div>
+            <div class="item">
+                <i class="ri-settings-3-line"></i>
+                <h3>Configurações</h3>
+            </div>
+        </div>
+
+        <div class="sign-out">
+            <i class="ri-logout-box-r-line"></i>
+            <h3>Sair</h3>
+        </div>
+    </div>
+
+    <!-- Seção Lateral -->
+    <div class="main">
+
+        <div class="header">
+
+            <div class="search">
+                <button><i class="ri-search-2-line"></i></button>
+                <input type="text" placeholder="Pesquisar">
+                <i class="ri-equalizer-line"></i>
+            </div>
+            <div class="icon-btns">
+                <i class="ri-notification-line"></i>
+                <i class="ri-menu-line" id="menu-btn"></i>
+            </div>
+        </div>
+
+        <h3 class="separator">
+            Perfil 
+        </h3>
+
+        
+    <!-- Conteúdo da página de perfil -->
+    <div class="main">
+        
+        <main>
+            <section class="profile-section">
+                <div class="profile-picture-container">
+                    <i class="fas fa-user-circle"></i>
+                </div> 
+                <div class="profile-info">
+                    <label for="username">Nome de usuário:</label>
+                    <input type="text" id="username" value="Fulano" readonly>
+                </div>
+                
+                <div class="profile-info">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="example@gmail.com" readonly>
+                </div>
+
+                <div class="activity-history">
+                    <!-- Histórico de Atividades -->
+                    <h2>Histórico de Atividades</h2>
+                    <ul>
+                        <li>Corrida - 06:30</li>
+                        <li>Membros Superiores - 19:03</li>
+                        <li>Membros Inferiores - 19:59</li>
+
+                
+                    </ul>
+                </div>
+
+
+                <div class="profile-settings">
+                    <!-- Configurações do Perfil -->
+                    <h2>Configurações do Perfil</h2>
+                    <!-- Aqui você pode incluir opções de configurações -->
+                    <button id="editarBtn" onclick="enableEdit()">Editar</button>
+                    <button>Alterar Senha</button>
+                </div>
+                <div class="logout-button">
+                    <!-- Botão de Logout -->
+                    <button>Sair</button>
+                </div>
+            </section>
+        </main>
+          <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FittyBuddy. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script>
+            if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful');
+        }, function(err) {
+          // Registration failed
+          console.log('ServiceWorker registration failed: ', err);
+        });
+        });
+}
+    </script>
+    </div>
+</body>
+
+</html>

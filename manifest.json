@@ -1,15 +1,21 @@
 {
-	"name": "PWA",
-	"short_name": "PWA",
-	"start_url": "/",
-	"display": "standalone",
-	"theme_color": "#359de0",
-	"background_color": "#359de0",
-	"icons": [
-		{
-			"src": "pwalogo.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		}
-	]
-}
+    "name": "FittyBuddy",
+    "short_name": "FittyBuddy",
+    "background_color": "#364670",
+    "theme_color": "#f0f5fd",
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "any",
+    "scope": "/",
+    "start_url": "index.html",
+    "lang": "pt",
+    "description": "Um APP para ajudar a organizar, monitorar e planejar atividades fisicas e alimentares.",
+    "icons":[{"purpose":"maskable",
+              "sizes":"512x512",
+              "src":"/img/FITTYBUDDY LOGO.jpg",
+              "type":"image/png"},
+    {"purpose":"any",
+    "sizes":"512x512",
+    "src":"/img/FITTYBUDDY LOGO.jpg",
+    "type":"image/png"}]
+  }
