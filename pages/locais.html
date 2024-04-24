@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>FittyBuddy</title>
+    <link rel="shortcut icon" href="/img/FITTYBUDDY.jpg" type="image/jpg">
+</head>
+
+
+<body>
+
+    <!-- Menu Lateral -->
+
+    <div class="left-section">
+        <div class="menu-lateral">
+            <a href="/pages/login.html"><h2>FittyBuddy</h2></a>
+            <div class="item">
+                <i class="ri-apps-line"></i>
+                <a href="/index.html"><h3>Painel</h3></a>
+            </div>
+            <div class="item">
+                <i class="ri-run-line"></i>
+                <h3>Registro de Atividades</h3>
+            </div>
+            <div class="item">
+                <i class="ri-pie-chart-line"></i>
+                <h3>Plano de Treino</h3>
+            </div>
+            <div class="item">
+                <i class="ri-user-line"></i>
+                <h3>Perfil</h3>
+            </div>
+            <div class="item">
+                <i class="ri-treasure-map-line"></i>
+                <h3><a href="#">Locais de Treino</a></h3>
+            </div>
+            <div class="item">
+                <i class="ri-shake-hands-line"></i>
+                <h3>Compartilhar Progresso</h3>
+            </div>
+            <div class="item">
+                <i class="ri-settings-3-line"></i>
+                <h3>Configurações</h3>
+            </div>
+        </div>
+
+        <div class="sign-out">
+            <i class="ri-logout-box-r-line"></i>
+            <h3>Sair</h3>
+        </div>
+    </div>
+
+    <!-- Seção Lateral -->
+    <div class="main">
+
+        <div class="header">
+
+            <div class="search">
+                <button><i class="ri-search-2-line"></i></button>
+                <input type="text" placeholder="Pesquisar">
+                <i class="ri-equalizer-line"></i>
+            </div>
+            <div class="icon-btns">
+                <i class="ri-notification-line"></i>
+                <i class="ri-menu-line" id="menu-btn"></i>
+            </div>
+        </div>
+
+        <h3 class="separator">
+            FittyBuddy
+        </h3>
+
+        <hr style="width: 70%; height: 3px; background-color: #007bff;">
+        <h3 class="separator2">Locais de Treino</h3>
+
+        <button onclick="getLocation()">Obter Localização</button>
+
+        <div id="demo"></div><br>
+        
+        
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FittyBuddy. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

@@ -56,12 +56,6 @@ function toggleMenu() {
 }
 
 
-
-
-
-
-
-
 // Selecione os botões de navegação
 const prevButton = document.querySelector('.prev-btn');
 const nextButton = document.querySelector('.next-btn');
@@ -106,3 +100,24 @@ nextButton.addEventListener('click', () => {
         carousel.style.transform = `translateX(${newPosition}px)`;
     }
 });
+
+// API de Geolocalização
+
+// PEGAR LOCALIZAÇÃO
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("demo").innerHTML = "Geolocalização não é suportada por este navegador.";
+    }
+}
+
+// MOSTRAR POSIÇÃO
+function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+    // Aqui você pode usar as coordenadas para realizar outras ações, como mostrar locais próximos.
+}
+
+

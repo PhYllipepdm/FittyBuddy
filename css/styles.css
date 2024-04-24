@@ -31,6 +31,11 @@ body{
     text-align: center;
 }
 
+.left-section a{
+    text-decoration: none;
+    color: #364670;
+}
+
 .left-section .menu-lateral{
     display: flex;
     flex-direction: column;
@@ -400,6 +405,18 @@ body{
     font-weight: 500;
 }
 
+/* Footer */
+footer {
+    background-color: #364670;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 
 @media screen and (max-width: 992px) {
     
@@ -467,6 +484,7 @@ body{
 
 }
 
+/* Responsividade para mobile */
 @media screen and (max-width: 576px) and (min-width: 320px) {
     
     .main {
@@ -559,6 +577,155 @@ body{
     .ri-arrow-left-line:hover {
         color: #0056b3;
     }
+
+    /* Responsividade login */
+
+    .login-container {
+        width: 90%;
+        padding: 30px 15px 0;
+    }
+
+    .login-title img {
+        max-width: 150px;
+        margin-bottom: 15px;
+    }
+
+    footer {
+        font-size: 12px; /* Reduz o tamanho do texto em dispositivos menores */
+    }
+
+    .login-title h1 {
+        font-size: 24px;
+    }
+
+    .login-container h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .login-container p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .login-container form {
+        width: 100%;
+    }
+
+    .login-container form input[type="text"],
+    .login-container form input[type="password"] {
+        width: calc(100% - 30px);
+        margin-bottom: 15px;
+    }
+
+    .login-container form input[type="submit"] {
+        width: 100%;
+    }
+}
+
+
+/* CSS para página de Login */
+
+#login-page{
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    background-color: #f0f5fd;
+}
+
+.login-container {
+    display: flex; 
+    flex-direction: column; 
+    /* align-items: center;  */
+    background-color: #fff;
+    padding: 30px 50px 30px 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.login-title {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    
+}
+
+.login-title img {
+    width: 100px;
+    height: auto; 
+}
+
+.login-container h3,
+.login-container p{
+    text-align: start;
+    margin: 20px;
+    font-weight: 700;
+    color: #364670;
+}
+
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login-container form label{
+    font-weight: 500;
+    color: #364670;
+}
+
+.login-container form input#username,
+.login-container form input#password {
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    color: #999;
+    outline: none;
+    font-weight: 500;
+}
+
+.login-container form input#username:focus,
+.login-container form input#password:focus {
+    border-color: #0d47a1; /* cor da borda quando focado */
+}
+
+.login-container #btn-submit{
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.login-container #btn-submit a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.login-container .or{
+    text-align: center;
+}
+
+.login-container .cadastro{
+    text-align: center;
+}
+
+.login-container a{
+    text-decoration: none;
+    color: #007bff;
+}
+
+h1 {
+    margin: 0; 
+    color: #364670;
 }
 
 
