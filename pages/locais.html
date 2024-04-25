@@ -35,7 +35,7 @@
             </div>
             <div class="item">
                 <i class="ri-user-line"></i>
-                <h3>Perfil</h3>
+                <a href="/pages/perfil.html"><h3>Perfil</h3></a>
             </div>
             <div class="item">
                 <i class="ri-treasure-map-line"></i>
@@ -92,76 +92,78 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
         <script>
-            // API de Geolocalização
-            // PEGAR LOCALIZAÇÃO
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPositionAndAddMarkers);
-                } else {
-                    document.getElementById("demo").innerHTML = "Geolocalização não é suportada por este navegador.";
-                }
-            }
-    
-            // MOSTRAR POSIÇÃO E ADICIONAR MARCADORES DE LOCAIS PRÓXIMOS
-            function showPositionAndAddMarkers(position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
-                
-                // Criar o mapa com a localização do usuário como centro
-                const map = createMap(latitude, longitude);
-                
-                // Adicionar marcadores ao mapa
-                addMarkerToMap(map, latitude, longitude, "Sua localização");
-            }
-    
-            // Função para adicionar marcador ao mapa
-            function addMarkerToMap(map, latitude, longitude, label) {
-                const marker = new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat([longitude, latitude]))
-                });
-    
-                const markerStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        src: 'https://cdn.rawgit.com/openlayers/ol3/master/examples/data/icon.png'
-                    }),
-                    text: new ol.style.Text({
-                        text: label,
-                        offsetY: -25,
-                        font: '14px Calibri,sans-serif',
-                        fill: new ol.style.Fill({ color: '#000' }),
-                        stroke: new ol.style.Stroke({ color: '#fff', width: 2 })
-                    })
-                });
-    
-                marker.setStyle(markerStyle);
-    
-                const markerLayer = new ol.layer.Vector({
-                    source: new ol.source.Vector({
-                        features: [marker]
-                    })
-                });
-    
-                map.addLayer(markerLayer);
-            }
-    
-            // Função para criar o mapa
-            function createMap(latitude, longitude) {
-                const map = new ol.Map({
-                    layers:[
-                        new ol.layer.Tile({
-                            source: new ol.source.OSM()
-                        })
-                    ],
-                    target: 'map',
-                    view: new ol.View({
-                        center: ol.proj.fromLonLat([longitude, latitude]), // Usar a localização do usuário como centro
-                        zoom: 13 // Defina o nível de zoom desejado
-                    })
-                });
-    
-                return map;
-            }
+// API de Geolocalização
+// PEGAR LOCALIZAÇÃO
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPositionAndAddMarkers);
+    } else {
+        document.getElementById("demo").innerHTML = "Geolocalização não é suportada por este navegador.";
+    }
+}
+
+// MOSTRAR POSIÇÃO E ADICIONAR MARCADORES DE LOCAIS PRÓXIMOS
+function showPositionAndAddMarkers(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+
+    // Criar o mapa com a localização do usuário como centro
+    const map = createMap(latitude, longitude);
+
+    // Adicionar marcador para a localização do usuário
+    addMarkerToMap(map, latitude, longitude, "Sua localização");
+}
+
+// Função para adicionar marcador ao mapa
+function addMarkerToMap(map, latitude, longitude, label) {
+    const marker = new ol.Feature({
+        geometry: new ol.geom.Point(ol.proj.fromLonLat([longitude, latitude]))
+    });
+
+    const markerStyle = new ol.style.Style({
+        image: new ol.style.Icon({
+            src: 'https://cdn.rawgit.com/openlayers/ol3/master/examples/data/icon.png',
+            anchor: [0.5, 1] // Ajuste o ponto de ancoragem do ícone conforme necessário
+        }),
+        text: new ol.style.Text({
+            text: label,
+            offsetY: -25,
+            font: '14px Calibri, sans-serif',
+            fill: new ol.style.Fill({ color: '#000' }),
+            stroke: new ol.style.Stroke({ color: '#fff', width: 2 })
+        })
+    });
+
+    marker.setStyle(markerStyle);
+
+    const markerLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            features: [marker]
+        })
+    });
+
+    map.addLayer(markerLayer);
+}
+
+// Função para criar o mapa
+function createMap(latitude, longitude) {
+    const map = new ol.Map({
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        target: 'map',
+        view: new ol.View({
+            center: ol.proj.fromLonLat([longitude, latitude]),
+            zoom: 13
+        })
+    });
+
+    return map;
+}
+
         </script>
 
     <!-- Footer -->
@@ -171,7 +173,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/scripts.js"></script>
-    <script>
+   
+   <script>
         if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
